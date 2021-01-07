@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { threadId } from 'worker_threads';
+
 import {IUser} from './../../model/iuser'
 import {UservalidateServiceService} from './../../services/uservalidate-service.service';
 @Component({
