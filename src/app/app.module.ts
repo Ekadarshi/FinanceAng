@@ -8,13 +8,15 @@ import { ValidateComponent } from './admin/validate/validate.component';
 import { ProductsComponent } from './admin/products/products.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { ProductComponent } from './product/product.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     ValidateComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
