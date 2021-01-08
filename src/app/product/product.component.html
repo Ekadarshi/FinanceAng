@@ -1,1 +1,104 @@
-<p>product works!</p>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+    <title>Products</title>
+
+    <link href="product.component.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <!-- <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav ">
+
+                        <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart">Cart</span></a></li>
+                        <li><a href="settings.html"><span class="glyphicon glyphicon-user">Settings</span></a></li>
+                        <li><a href="logout.html"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="jumbotron jumbotron_style">
+                <h1>Welcome to our Lifestyle store!</h1>
+                <p> We have the best products for you. No need to hunt it around, we have all in one
+                    place.
+                </p>
+            </div>
+            <div class="padding-20"></div>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6">
+                    <div *ngFor="let product of productlist">
+                    <div class="thumbnail">
+                        <img src="{{'assets/images/' + product.ImageName}}" alt="Apple iPhone 12 Pro">
+                        <div class="caption">
+                            <h3>{{product.ProductName}} </h3>
+                            <p>Rs.{{product.Price}}</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- <div class="col-md-3 col-sm-6 ">
+                    <div class="thumbnail">
+                        <img src="assets/images/Sony-Bravia.jpg" alt="Sony">
+                        <div class="caption">
+                            <h3>Sony LDS</h3>
+                            <p>Rs.32000.00</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>-->
+            </div> 
+            
+             <h1> Hello</h1>   
+             <table class="table table-sm table-hover">
+                <tr class='btn-success'>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                       
+                  </tr>
+                    <tr *ngFor="let product of productlist">
+                    <td>{{ product.ProductID }}</td>
+                    <td>{{product.ProductName | uppercase}}</td>
+                    <td>{{ product.Price}}</td>
+                    
+                    </tr>
+                    </table>
+
+            <div class="padding-20"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+
+</body>
+
+</html>
