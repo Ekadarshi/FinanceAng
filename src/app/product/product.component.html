@@ -28,14 +28,14 @@ and open the template in the editor.
                     </button>
                     
                 </div>
-                <!-- <div class="collapse navbar-collapse" id="mynavbar">
+                <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="nav navbar-nav ">
 
-                        <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart">Cart</span></a></li>
-                        <li><a href="settings.html"><span class="glyphicon glyphicon-user">Settings</span></a></li>
-                        <li><a href="logout.html"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>
+                        <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"> Cart</span></a></li>
+                        <li><a href="settings.html"><span class="glyphicon glyphicon-user"> Settings</span></a></li>
+                        <li><a href="logout.html"><span class="glyphicon glyphicon-log-out"> Logout</span></a></li>
                     </ul>
-                </div> -->
+                </div>
             </div>
         </nav>
     </header>
@@ -47,21 +47,26 @@ and open the template in the editor.
                     place.
                 </p>
             </div>
+            <div *ngFor="let product of productlist">
             <div class="padding-20"></div>
-            <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <div *ngFor="let product of productlist">
+            <!-- <div class="row text-center">
+                <div class="col-md-3 col-sm-6"> -->
+                    
                     <div class="thumbnail">
                         <img src="{{'assets/images/' + product.ImageName}}" alt="Apple iPhone 12 Pro">
-                        <div class="caption">
-                            <h3>{{product.ProductName}} </h3>
-                            <p>Rs.{{product.Price}}</p>
-                            <button class="add-to-cart">Add to Cart</button>
+                        <div class="caption" class="text-center">
+                            <h6>{{product.ProductName}} </h6>
+                            <p>Cost :{{product.Price | currency:'₹' }}</p>
+                             <div *ngIf="product.stock > 10">Render content when condition is true.</div>
+                            <!-- <button class="add-to-cart" (click)="ClikedOnAddToCart()">Add to Cart</button> -->
+                            <a [routerLink]="['/productdetails/', product.ProductID]" class="btn btn-primary btn-sm float-right" >Display</a>
                         </div>
+                        
                     </div>
-                </div>
-            </div>
-
+                <!-- </div> -->
+                
+            <!-- </div> -->
+       
                 <!-- <div class="col-md-3 col-sm-6 ">
                     <div class="thumbnail">
                         <img src="assets/images/Sony-Bravia.jpg" alt="Sony">
@@ -74,7 +79,7 @@ and open the template in the editor.
                 </div>-->
             </div> 
             
-             <h1> Hello</h1>   
+             <!-- <h1> Hello</h1>   
              <table class="table table-sm table-hover">
                 <tr class='btn-success'>
                     <th>Id</th>
@@ -88,7 +93,7 @@ and open the template in the editor.
                     <td>{{ product.Price}}</td>
                     
                     </tr>
-                    </table>
+                    </table> -->
 
             <div class="padding-20"></div>
         </div>
